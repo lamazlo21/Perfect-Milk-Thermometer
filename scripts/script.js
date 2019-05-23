@@ -1,3 +1,7 @@
 const socket = io();
-const temp = document.querySelector('.temperature');
-console.log(temp);
+
+const tempEl = document.querySelector('.temperature');
+
+socket.on('temp', (temp)=>{
+	tempEl.textContent = temp.temp;
+});

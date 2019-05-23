@@ -1,0 +1,28 @@
+{
+  "name": "Perfect-Milk-Thermometer",
+  "version": "0.0.0",
+  "description": "Measures perfect milk temperature for latte art",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lamazlo21/Perfect-Milk-Thermometer.git"
+  },
+  "keywords": [
+    "Coffee"
+  ],
+  "author": "Dawid Zawadzki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lamazlo21/Perfect-Milk-Thermometer/issues"
+  },
+  "homepage": "https://github.com/lamazlo21/Perfect-Milk-Thermometer#readme",
+  "dependencies": {
+    "ds18x20": "^0.2.0",
+    "onoff": "^4.1.1",
+    "socket.io": "^2.2.0"
+  }
+}

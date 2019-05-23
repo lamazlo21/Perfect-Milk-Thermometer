@@ -7,7 +7,6 @@ const server = http.createServer((req,res)=>{
 	switch(req.method){
 	case 'GET':
 		let fileContent = null;
-console.log(req.url);
 		switch(req.url){
 			case '/':
 			fileContent = fs.readFileSync('./public/index.html','utf8');
@@ -32,11 +31,19 @@ console.log(req.url);
 
 const io = socket(server);
 
+setInterval(()=>{
+	io.emit('temp',{temp: temp.temp});
+},1000);
+
+
 io.on('connection', (socket)=>{
-	console.log('Connected');	
+	console.log('New user connected!');
+	io.on('disconnect',()=>{
+		console.log('User disconnected!');
+	});
 });
 
 
-server.listen(3500,()=>{
+server.listen(3503,()=>{
 	console.log('Server listening to port 3500!');
 });
